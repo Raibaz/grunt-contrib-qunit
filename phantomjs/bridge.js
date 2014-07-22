@@ -33,9 +33,10 @@
       // passing tests, so only dump if the test failed.
       actual = QUnit.jsDump.parse(obj.actual);
       expected = QUnit.jsDump.parse(obj.expected);
+      message = QUnit.jsDump.parse(obj.message);
     }
     // Send it.
-    sendMessage('qunit.log', obj.result, actual, expected, obj.message, obj.source);
+    sendMessage('qunit.log', obj.result, actual, expected, message, obj.source);
   });
 
   QUnit.testStart(function(obj) {
